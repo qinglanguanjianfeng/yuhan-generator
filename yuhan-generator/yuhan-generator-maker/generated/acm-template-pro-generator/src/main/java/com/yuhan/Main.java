@@ -8,6 +8,7 @@ public class Main {
 //        args = new String[]{"config"};
 //        args = new String[]{"list"};
         CommandExecutor commandExecutor = new CommandExecutor();
+        args = new String[]{"generate","-l"};
         commandExecutor.doExecute(args);//用户输入的参数
     }
 }

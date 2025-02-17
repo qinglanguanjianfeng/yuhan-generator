@@ -1,0 +1,24 @@
+{
+    "name": "acm-template-pro-generator",
+    "description": "ACM示例模板生成器",
+    "fileConfig": {
+        "sourceRootPath": "F:\\generator\\yuhan-generator\\yuhan-generator-demo-projects/acm-template",
+        "files": [
+            {
+                "inputPath": "src/com/yuhan/acm/MainTemplate.java",
+                "outputPath": "src/com/yuhan/acm/MainTemplate.java.ftl",
+                "type": "file",
+                "generateType": "dynamic"
+            }
+        ]
+    },
+    "modelConfig": {
+        "models": [
+            {
+                "fieldName": "outputText",
+                "type": "String",
+                "defaultValue": "sum = "
+            }
+        ]
+    }
+}

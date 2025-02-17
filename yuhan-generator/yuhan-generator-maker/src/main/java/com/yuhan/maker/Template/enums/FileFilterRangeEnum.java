@@ -1,18 +1,23 @@
-package com.yuhan.maker.meta.enums;
+package com.yuhan.maker.Template.enums;
+
+import cn.hutool.core.util.ObjectUtil;
+import lombok.Generated;
+import lombok.Getter;
 
 /**
- * 文件生成类型枚举
+ * 文件过滤范围枚举
  */
-public enum FileGenerateTypeEnum {
+@Getter
+public enum FileFilterRangeEnum {
 
-    DYNAMIC("动态", "dynamic"),
-    STATIC("静态", "static");
+    FILE_NAME("文件名称","fileName"),
+    FILE_CONTENT("文件内容","fileContent");
 
     private final String text;
 
     private final String value;
 
-    FileGenerateTypeEnum(String text, String value) {
+    FileFilterRangeEnum(String text, String value) {
         this.text = text;
         this.value = value;
     }
@@ -23,6 +28,24 @@ public enum FileGenerateTypeEnum {
 
     public String getValue() {
         return value;
+    }
+
+    /**
+     * 根据value获取枚举
+     *
+     * @param value
+     * @return
+     */
+    public static FileFilterRangeEnum getEnumByValue(String value){
+        if(ObjectUtil.isEmpty(value)){
+            return null;
+        }
+        for(FileFilterRangeEnum anEnum:FileFilterRangeEnum.values()){
+            if(anEnum.value.equals(value)){
+                return anEnum;
+            }
+        }
+        return null;
     }
 }
 

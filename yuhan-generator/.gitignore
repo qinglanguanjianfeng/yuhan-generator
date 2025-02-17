@@ -1,6 +1,8 @@
 ### Custom Template
 
 .idea
+.temp
+generated
 yuhan-generator.iml
 yuhan-generator-basic.iml
 

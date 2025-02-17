@@ -1,0 +1,86 @@
+{
+  "name": "acm-template-pro-generator",
+  "description": "ACM示例模板生成器",
+  "basePackage": "com.yuhan",
+  "version": "1.0",
+  "author": "yuhan",
+  "createTime": "2024-05-21",
+  "fileConfig": {
+    "inputRootPath": ".source/acm-template-pro",
+    "outputRootPath": "generated",
+    "sourceRootPath": "F:/generator/yuhan-generator/yuhan-generator-demo-projects/acm-template-pro",
+    "type": "dir",
+    "files": [
+      {
+        "inputPath": "src/com/yuhan/acm/MainTemplate.java.ftl",
+        "outputPath": "src/com/yuhan/acm/MainTemplate.java",
+        "type": "file",
+        "generateType": "dynamic"
+      },
+      {
+        "groupKey": "git",
+        "groupName": "开源",
+        "type": "group",
+        "condition": "needGit",
+        "files": [
+          {
+            "inputPath": ".gitignore",
+            "outputPath": ".gitignore",
+            "type": "file",
+            "generateType": "static",
+            "condition": "needGit"
+          },
+          {
+            "inputPath": "README.md",
+            "outputPath": "README.md",
+            "type": "file",
+            "generateType": "static"
+          }
+        ]
+      }
+    ]
+  },
+  "modelConfig": {
+    "models": [
+      {
+        "fieldName": "needGit",
+        "type": "boolean",
+        "description": "是否生成.gitignore文件",
+        "defaultValue": true,
+        "abbr": "n"
+      },
+      {
+        "fieldName": "loop",
+        "type": "boolean",
+        "description": "是否生成循环",
+        "defaultValue": false,
+        "abbr": "l"
+      },
+      {
+        "fieldName": "group",
+        "groupKey": "mainTemplate",
+        "groupName": "核心模板",
+        "type": "MainTemplate",
+        "description": "用于生成核心模板文件",
+        "condition": "loop",
+        "abbr": "g",
+        "models": [
+          {
+            "fieldName": "author",
+            "type": "String",
+            "description": "作者注释",
+            "defaultValue": "yuhan",
+            "abbr": "a"
+          },
+          {
+            "fieldName": "outputText",
+            "type": "String",
+            "description": "输出信息",
+            "defaultValue": "sum = ",
+            "abbr": "o"
+          }
+        ]
+      }
+    ]
+  }
+}

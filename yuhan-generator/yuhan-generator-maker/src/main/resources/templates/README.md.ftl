@@ -27,7 +27,7 @@ ${modelInfo?index + 1}）${modelInfo.fieldName}
 
 描述：${modelInfo.description}
 
-默认值：${modelInfo.defaultValue?c}
+<#--默认值：${modelInfo.defaultValue?c}-->
 
 缩写： -${modelInfo.abbr}
 
